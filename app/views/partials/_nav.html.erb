@@ -34,6 +34,16 @@
               <li><%= link_to "Add an Instructor", new_instructor_path %></li>
             </ul>
           </li>
+
+          <!-- options for families -->
+          <li class="has-dropdown">
+            <!-- <a href="#">Families</a> -->
+            <%= link_to "Families", families_path %>
+            <ul class="dropdown">
+              <li><%= link_to "List Families", families_path %></li>
+              <li><%= link_to "Add a Family", new_family_path %></li>
+            </ul>
+          </li>
         </ul>
       </section>
     </nav>

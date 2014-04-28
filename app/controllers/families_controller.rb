@@ -2,12 +2,9 @@ class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :edit, :update, :destroy]
 
   def index
-<<<<<<< HEAD
-    @active_families = Family.active.alphabetical.paginate(:page => params[:page]).per_page(10))
-=======
     @active_families = Family.active.alphabetical.paginate(:page => params[:page]).per_page(10)
     @inactive_families = Family.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
->>>>>>> views
+
   end
 
   def show

@@ -1,0 +1,24 @@
+<%= simple_form_for(@student, html: { class: 'form-horizontal' }) do |f| %>
+  <div class="row">
+    <div class="small-6 columns">
+      <h3><%= controller.action_name.capitalize %> Student</h3>
+    
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :date_of_birth, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 20, end_year: Date.today.year - 1 %>
+      <%= f.input :rating %>
+      <%= f.input :active %>
+      <div class="form-actions">
+      <%= f.submit nil, class: 'button radius' %>
+      <%= link_to 'Back to list of students', students_path, :class => 'button secondary radius' %>
+      </div>
+    </div>
+
+    <div class="small-1 columns">&nbsp;</div>
+    <div class="small-5 columns">
+        <h3>Families</h3>
+        <%= f.input :family_id, label: "", collection: Family.active.alphabetical.map{|f| "#{f.family_name}, #{f.parent_first_name}"}, as: :radio_buttons %>
+    </div>
+  </div>
+
+<% end %>

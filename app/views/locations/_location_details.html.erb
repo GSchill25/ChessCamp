@@ -1,0 +1,28 @@
+<h3>Location Details</h3><br />
+<strong>Name:&nbsp;&nbsp;</strong> 
+  <%= @location.name %><br /><br />
+
+<strong>Primary Street:&nbsp;&nbsp;</strong> 
+  <%= @location.street_1 %><br /><br />
+
+<strong>Secondary Street:&nbsp;&nbsp;</strong> 
+  <%= @location.street_2 %><br /><br />
+
+<strong>City:&nbsp;&nbsp;</strong><br /> 
+  <%= @location.city %><br /><br />
+
+<strong>State:&nbsp;&nbsp;</strong> 
+  <%= @location.state %><br /><br />
+
+<strong>Zip Code:&nbsp;&nbsp;</strong> 
+  <%= @location.zip %><br /><br />
+
+<strong>Max Capacity:&nbsp;&nbsp;</strong> 
+  <%= @location.max_capacity %><br /><br />
+
+<strong>Active?&nbsp;&nbsp;</strong>
+  <%= @location.active ? "Yes" : "No" %><br /><br />
+
+
+
+<%= link_to "Edit this location", edit_location_path(@location), class: "button tiny radius" %>&nbsp;&nbsp;

@@ -65,6 +65,13 @@
             </ul>
           </li>
 
+          <% if logged_in? %>
+            <%= link_to 'Logout', logout_path %>
+            <br>[<%= current_user.username %>]
+          <% else %>
+            <%= link_to 'Login', login_path %>
+          <% end %>
+
         </ul>
       </section>
     </nav>

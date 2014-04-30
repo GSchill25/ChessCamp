@@ -1,25 +1,4 @@
 ChessCamp::Application.routes.draw do
-  get "locations/index"
-  get "locations/show"
-  get "locations/new"
-  get "locations/edit"
-  get "locations/create"
-  get "locations/update"
-  get "locations/destroy"
-  get "students/index"
-  get "students/show"
-  get "students/new"
-  get "students/edit"
-  get "students/create"
-  get "students/update"
-  get "students/destroy"
-  get "families/index"
-  get "families/show"
-  get "families/new"
-  get "families/edit"
-  get "families/create"
-  get "families/update"
-  get "families/destroy"
   # generated routes
   resources :curriculums
   resources :instructors
@@ -27,6 +6,14 @@ ChessCamp::Application.routes.draw do
   resources :families
   resources :locations
   resources :students
+  resources :users
+  resources :sessions
+
+  
+  get 'user/edit' => 'users#edit', :as => :edit_current_user
+  get 'signup' => 'users#new', :as => :signup
+  get 'login' => 'sessions#new', :as => :login
+  get 'logout' => 'sessions#destroy', :as => :logout
 
   # semi-static routes
   get 'home', to: 'home#index', as: :home

@@ -17,7 +17,7 @@
     <div class="small-1 columns">&nbsp;</div>
     <div class="small-5 columns">
         <h3>Families</h3>
-        <%= f.input :family_id, label: "", collection: Family.active.alphabetical.map{|f| "#{f.family_name}, #{f.parent_first_name}"}, as: :radio_buttons %>
+        <%= f.input :family_id, label: "", collection: Family.active.alphabetical.map{|f| "#{f.family_name}, #{f.parent_first_name}"}, as: :check_boxes %>
     </div>
   </div>
 

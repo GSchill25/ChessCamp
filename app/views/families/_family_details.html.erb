@@ -9,7 +9,7 @@
   <%= @family.email %><br /><br />
 
 <strong>Phone:&nbsp;&nbsp;</strong> 
-  <%= @family.phone %><br /><br />
+  <%= number_to_phone(@family.phone) %><br /><br />
 
 <strong>Active?&nbsp;&nbsp;</strong>
   <%= @family.active ? "Yes" : "No" %><br /><br />

@@ -8,20 +8,16 @@
 <strong>Secondary Street:&nbsp;&nbsp;</strong> 
   <%= @location.street_2 %><br /><br />
 
-<strong>City:&nbsp;&nbsp;</strong><br /> 
-  <%= @location.city %><br /><br />
-
-<strong>State:&nbsp;&nbsp;</strong> 
-  <%= @location.state %><br /><br />
-
-<strong>Zip Code:&nbsp;&nbsp;</strong> 
-  <%= @location.zip %><br /><br />
+<strong>Address:&nbsp;&nbsp;</strong><br /> 
+  <%= "#{@location.city}, #{@location.state} #{@location.zip}" %><br /><br />
 
 <strong>Max Capacity:&nbsp;&nbsp;</strong> 
   <%= @location.max_capacity %><br /><br />
 
 <strong>Active?&nbsp;&nbsp;</strong>
   <%= @location.active ? "Yes" : "No" %><br /><br />
+
+<strong>Map</strong>
 
 
 

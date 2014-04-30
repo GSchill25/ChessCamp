@@ -5,8 +5,11 @@
 <strong>Date of birth:&nbsp;&nbsp;</strong> 
   <%= @student.date_of_birth.strftime('%m/%d/%y') %><br /><br />
 
+<strong>Age:&nbsp;&nbsp;</strong> 
+  <%= @student.age %><br /><br />
+
 <strong>Rating:&nbsp;&nbsp;</strong><br /> 
-  <%= @student.rating %><br /><br />
+  <%= @student.rating.zero? ? "Unrated" : @student.rating %><br /><br />
 
 <strong>Active?&nbsp;&nbsp;</strong>
   <%= @student.active ? "Yes" : "No" %><br /><br />

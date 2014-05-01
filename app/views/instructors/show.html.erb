@@ -2,6 +2,9 @@
   <div class="small-7 columns">
     <!-- MAIN CONTENT GOES HERE -->
     <%= render :partial => "instructor_details" %>
+    <%= if @instructor.user.nil?==false %>
+      <%= render :partial => "user_details" %>
+    <%= end %>
   </div>
 
   <div class="small-1 columns">

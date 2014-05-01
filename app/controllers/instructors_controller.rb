@@ -22,7 +22,7 @@ class InstructorsController < ApplicationController
     # reformating the phone so it has dashes when displayed for editing (personal taste)
     @instructor.phone = number_to_phone(@instructor.phone)
     if @instructor.user.nil?
-      @instructor.build_user
+        @instructor.build_user
     end
   end
 

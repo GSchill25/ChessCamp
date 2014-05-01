@@ -2,9 +2,6 @@
   <div class="small-7 columns">
     <!-- MAIN CONTENT GOES HERE -->
     <%= render :partial => "instructor_details" %>
-    <%= if @instructor.user.nil?==false %>
-      <%= render :partial => "user_details" %>
-    <%= end %>
   </div>
 
   <div class="small-1 columns">
@@ -13,6 +10,6 @@
 
   <div class="small-4 columns">
     <!-- SIDEBAR CONTENT GOES HERE -->
-    <%= render partial: 'instructor_camps' %>
+    <%= render partial: "instructor_camps" %>
   </div>
 </div>

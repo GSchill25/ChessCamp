@@ -3,7 +3,7 @@
   <%= @student.proper_name %><br /><br />
 
 <strong>Date of birth:&nbsp;&nbsp;</strong> 
-  <%= humanize_date(@student.date_of_birth) %><br /><br />
+  <%= @student.date_of_birth.strftime('%m/%d/%Y') %><br /><br />
 
 <strong>Age:&nbsp;&nbsp;</strong> 
   <%= @student.age %><br /><br />

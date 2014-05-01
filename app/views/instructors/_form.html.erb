@@ -1,16 +1,22 @@
-<%= simple_form_for(@instructor, html: { class: 'form-horizontal' }) do |f| %>
+<%= simple_nested_form_for(@instructor, html: { class: 'form-horizontal' }) do |ins_form| %>
    
    <h3><%= controller.action_name.capitalize %> Instructor</h3>
     
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :phone, as: :string %>
-    <%= f.input :email %>
-    <%= f.input :active %>
-    <%= f.input :bio, input_html: { rows: 6 } %>
+    <%= ins_form.input :first_name %>
+    <%= ins_form.input :last_name %>
+    <%= ins_form.input :phone, as: :string %>
+    <%= ins_form.input :email %>
+    <%= ins_form.input :active %>
+    <%= ins_form.input :bio, input_html: { rows: 6 } %>
+    </br></br><legend>User login for Instructor</legend></br></br>
+        <div id="user_fields">
+          <%= ins_form.simple_fields_for :user do |user_form| %>
+            <%= render :partial => "user_fields", :locals => { :f => user_form } %>
+          <% end %> 
+        </div> 
 
     <div class="form-actions">
-      <%= f.submit nil, class: 'button radius' %>
+      <%= ins_form.submit nil, class: 'button radius' %>
       <%= link_to 'Back to list of instructors', instructors_path, :class => 'button secondary radius' %>
     </div>
 

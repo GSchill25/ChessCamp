@@ -17,6 +17,8 @@ class CampsController < ApplicationController
   end
 
   def edit
+    @camp.start_date = humanize_date @camp.start_date
+    @camp.end_date = humanize_date @camp.end_date
   end
 
   def create
@@ -42,11 +44,17 @@ class CampsController < ApplicationController
   end
 
   private
+    def convert_start_and_end_dates
+      params[:camp][:start_date] = convert_to_date(params[:camp][:start_date]) unless params[:camp][:start_date].blank?
+      params[:camp][:end_date] = convert_to_date(params[:camp][:end_date]) unless params[:camp][:end_date].blank?
+    end
+
     def set_camp
       @camp = Camp.find(params[:id])
     end
 
     def camp_params
+      convert_start_and_end_dates
       params.require(:camp).permit(:curriculum_id, :cost, :start_date, :end_date, :time_slot, :max_students, :active, :instructor_ids => [])
     end
 end

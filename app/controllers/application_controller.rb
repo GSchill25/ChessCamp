@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # a custom module to handle some issues with dates
+  include DateFormatter
+
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "You are not authorized to take this action."
     redirect_to home_path

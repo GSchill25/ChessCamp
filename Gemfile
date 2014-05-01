@@ -56,6 +56,12 @@ gem 'bcrypt-ruby', '3.1.5'
 #authorization
 gem 'cancancan', '1.7.0'
 
+gem 'jquery-ui-rails', '4.1.1'
+
+gem "nested_form"
+
+gem 'chronic', '0.10.2'
+
 # Additional gems that are very useful in Rails development
 group :development do
   gem 'quiet_assets'

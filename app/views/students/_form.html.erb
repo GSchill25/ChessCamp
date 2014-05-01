@@ -7,17 +7,12 @@
       <%= f.input :last_name %>
       <%= f.input :date_of_birth, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 20, end_year: Date.today.year - 1 %>
       <%= f.input :rating %>
+      <%= f.input :family_id, collection: Family.active.alphabetical.map{|f| f.family_name}, prompt: "Select family..." %>
       <%= f.input :active %>
       <div class="form-actions">
       <%= f.submit nil, class: 'button radius' %>
       <%= link_to 'Back to list of students', students_path, :class => 'button secondary radius' %>
       </div>
-    </div>
-
-    <div class="small-1 columns">&nbsp;</div>
-    <div class="small-5 columns">
-        <h3>Families</h3>
-        <%= f.input :family_id, label: "", collection: Family.active.alphabetical.map{|f| "#{f.family_name}, #{f.parent_first_name}"}, as: :check_boxes %>
     </div>
   </div>
 

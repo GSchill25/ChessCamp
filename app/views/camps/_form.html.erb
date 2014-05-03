@@ -5,6 +5,7 @@
         <h3><%= controller.action_name.capitalize %> Camp</h3>
         <%= f.input :curriculum_id, collection: Curriculum.active.alphabetical, prompt: "Select curriculum..." %>
         <%= f.input :cost %>
+        <%= f.input :location_id, collection: Location.active.alphabetical, prompt: "Select location.." %>
         <%= f.input :max_students %>
         <%= f.input :start_date, label: "Start Date", as: :string, :input_html => {:class => "avg datepicker"} %> 
         <%= f.input :end_date, label: "End Date", as: :string, :input_html => {:class => "avg datepicker"} %>
@@ -17,9 +18,6 @@
         <h3>Camp Instructor(s)</h3>
         <%= f.input :instructor_ids, label: "", collection: Instructor.active.alphabetical, as: :check_boxes %>
         <% end %>
-        </br></br>
-        <h3> Camp Location</h3>
-        <%= f.input :location_id, label: "", collection: Location.active.alphabetical, as: :check_boxes %>
       </div>
     </div>
 

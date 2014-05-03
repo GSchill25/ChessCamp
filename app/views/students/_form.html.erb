@@ -5,9 +5,9 @@
     
       <%= f.input :first_name %>
       <%= f.input :last_name %>
-      <%= f.input :date_of_birth, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 20, end_year: Date.today.year - 1 %>
+      <%= f.input :date_of_birth, label: "Date of Birth:", as: :string, :input_html => {:class => "avg datepicker"} %>
       <%= f.input :rating %>
-      <%= f.input :family_id, collection: Family.active.alphabetical.map{|f| f.family_name}, prompt: "Select family..." %>
+      <%= f.input :family_id, collection: @families.map{|f| f.family_name}, prompt: "Select family..." %>
       <%= f.input :active %>
       <div class="form-actions">
       <%= f.submit nil, class: 'button radius' %>

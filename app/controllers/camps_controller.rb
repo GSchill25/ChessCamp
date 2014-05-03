@@ -56,6 +56,6 @@ class CampsController < ApplicationController
 
     def camp_params
       convert_start_and_end_dates
-      params.require(:camp).permit(:curriculum_id, :cost, :start_date, :end_date, :time_slot, :max_students, :active, :instructor_ids => [])
+      params.require(:camp).permit(:curriculum_id, :location_id, :cost, :start_date, :end_date, :time_slot, :max_students, :active, :instructor_ids => [])
     end
 end

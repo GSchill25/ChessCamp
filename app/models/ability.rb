@@ -8,7 +8,13 @@ class Ability
     if user.role? :admin
       can :manage, :all
     elsif user.role? :instructor
-        can :read, :all
+        can :read, Student do |this_student|
+            students_taught = user.instructor.camps.map{|c| c.students.map(&:id)}.flatten
+            students_taught.include? this_student.id
+        end
+        can :read, Instructor
+        can :read, Location
+        can :read, Camp
         can :update, Instructor do |instructor|
             instructor.id == user.instructor_id
         end

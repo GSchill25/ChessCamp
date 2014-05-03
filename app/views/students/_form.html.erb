@@ -7,7 +7,7 @@
       <%= f.input :last_name %>
       <%= f.input :date_of_birth, label: "Date of Birth:", as: :string, :input_html => {:class => "avg datepicker"} %>
       <%= f.input :rating %>
-      <%= f.input :family_id, collection: @families.map{|f| f.family_name}, prompt: "Select family..." %>
+      <%= f.input :family_id, collection: Family.active.alphabetical, label_method: :family_name, prompt: "Select Family..." %>
       <%= f.input :active %>
       <div class="form-actions">
       <%= f.submit nil, class: 'button radius' %>

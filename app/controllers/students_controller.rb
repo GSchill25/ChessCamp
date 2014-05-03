@@ -13,11 +13,9 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
-    @families = Family.active.alphabetical
   end
 
   def edit
-    @families = Family.active.alphabetical
   end
 
   def create

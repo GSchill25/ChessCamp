@@ -1,0 +1,28 @@
+<%= simple_form_for(@student, html: { class: 'form-horizontal' }) do |f| %>
+    <div class="row">
+      <div class="small-3 columns">
+        <b><h6>Available Camps</h6></b>
+        <%= f.input :camp_ids, label: "", collection: @camps, as: :check_boxes %> 
+      </div>
+      <div class="small-9 columns">
+        <table class="custom_table">
+            <tr>
+              <th class="custom_head" width="200">Camp Start Date</th>
+              <th class="custom_head" width="200">Camp End Date</th>
+            </tr>
+          <% @camps.each do |camp| %>
+            <tr>
+              <td class="custom_table" align="center"><%= camp.start_date.strftime('%m/%d/%y') %></td>
+              <td class="custom_table" align="center"><%= camp.end_date.strftime('%m/%d/%y') %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, class: 'button radius' %>
+      <%= link_to 'Back to list of students', students_path, :class => 'button secondary radius' %>
+    </div>
+
+<% end %>

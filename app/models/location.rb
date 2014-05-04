@@ -21,9 +21,12 @@ class Location < ActiveRecord::Base
   before_destroy :verify_that_never_used_for_camps
   before_validation :get_location_coordinates
 
-  def create_map_link(zoom=14,width=800,height=800)
-    markers = "&markers=color:red%7Ccolor:red%7Clabel:%7C#{latitude},#{longitude}"
-    map = "http://maps.google.com/maps/api/staticmap?center= #{latitude},#{longitude}&zoom=#{zoom}&size=#{width}x#{height}&maptype=roadmap#{markers}&sensor=false"
+  def create_map_link(zoom=15)
+    @name = self.name.gsub(" ","+")
+    @street_1 = self.street_1.gsub(" ","+")
+    @city = self.city.gsub(" ","+")
+    @state = self.state.gsub(" ","+")
+    map = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDqzzujjgKeCaCLRzj3r8gur6DLZzWJvdg&q=#{@name},#{@street_1},#{@city}+#{@state}&zoom=#{zoom}&maptype=roadmap"
   end
 
   private

@@ -1252,6 +1252,17 @@ a img {
 
 }
 
+.contain-to-grid{
+	position: fixed;
+	margin:auto;
+	z-index: 100;
+	height: 50px;
+}
+
+#main_content {
+	padding-top:60px;
+}
+
 select.date { width: 95px; }
 #camp_time_slot, #camp_max_students, #camp_cost, #camp_curriculum_id { width: 290px; }
 #instructor_bio { height: 7rem; }

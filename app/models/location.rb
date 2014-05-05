@@ -39,6 +39,7 @@ class Location < ActiveRecord::Base
     zip = self.zip
     
     coord = Geocoder.coordinates("#{str}, #{zip}")
+    sleep 1
     if coord
       self.latitude = coord[0]
       self.longitude = coord[1]

@@ -63,5 +63,10 @@ class UserTest < ActiveSupport::TestCase
       deny @mark_user.role?(:instructor)
     end
 
+    should "show authenticate method works properly" do
+     assert User.authenticate(@mark_user.username, @mark_user.password)
+     deny User.authenticate(@mark_user.username, "wrong")
+    end
+
   end
 end

@@ -80,6 +80,10 @@ class LocationTest < ActiveSupport::TestCase
       deny klingon_city.valid?, "#{klingon_city.to_yaml}"
     end
 
+    should "run create_map_link properly" do
+     assert_equal "https://www.google.com/maps/embed/v1/place?key=AIzaSyDqzzujjgKeCaCLRzj3r8gur6DLZzWJvdg&q=Carnegie+Mellon,5000+Forbes+Avenue,Pittsburgh+PA&zoom=15&maptype=roadmap", @cmu.create_map_link
+    end
+
   end
 
 end

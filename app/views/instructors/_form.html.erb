@@ -6,6 +6,8 @@
     <%= ins_form.input :last_name %>
     <%= ins_form.input :phone, as: :string %>
     <%= ins_form.input :email %>
+    <%= ins_form.label :picture %><br />
+    <%= ins_form.file_field :picture %>
     <%= ins_form.input :active %>
     <%= ins_form.input :bio, input_html: { rows: 6 } %>
     </br></br><legend>User login for Instructor</legend></br></br>

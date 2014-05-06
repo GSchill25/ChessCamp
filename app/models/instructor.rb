@@ -8,7 +8,7 @@ class Instructor < ActiveRecord::Base
   has_one :user
 
   #nested form
-  accepts_nested_attributes_for :user, reject_if: lambda {|user| user[:username].blank?}
+  accepts_nested_attributes_for :user, reject_if: lambda {|user| user[:username].blank? or user[:password].blank?}
 
   # validations
   validates_presence_of :first_name, :last_name, :phone

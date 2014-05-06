@@ -22,13 +22,19 @@
         <%= yield %>
       </div>
     </div>
+    </br></br>
+
     <footer>
       <div class="row">
-        <div class="small-12 columns" id="footer">
+        <%= render partial: 'partials/bottom_images' if not current_page?(:controller => 'home', :action => 'index') %>
+      </div>
+      </br></br>
+      <div class="row">
+        <div class="small-6 large-centered columns">
           <%= render partial: 'partials/footer' %>
         </div>
       </div> 
-    </footer> 
+    </footer>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

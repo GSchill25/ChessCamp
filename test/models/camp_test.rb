@@ -9,6 +9,9 @@ class CampTest < ActiveSupport::TestCase
   should have_many(:registrations)
   should have_many(:students).through(:registrations)
 
+  #test nested_attributes
+  should accept_nested_attributes_for(:registrations)
+
   # test validations
   should validate_presence_of(:curriculum_id)
   should validate_presence_of(:start_date)

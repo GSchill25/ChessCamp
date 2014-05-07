@@ -1,28 +1,40 @@
-<%= simple_form_for(@camp, html: { class: 'form-horizontal' }) do |f| %>
+<%= simple_nested_form_for(@camp, html: { class: 'form-horizontal' }) do |camp_form| %>
        
     <div class="row">
-      <div class="small-6 columns">
+      <div class="small-4 columns">
         <h3><%= controller.action_name.capitalize %> Camp</h3>
-        <%= f.input :curriculum_id, collection: Curriculum.active.alphabetical, prompt: "Select curriculum..." %>
-        <%= f.input :cost %>
-        <%= f.input :location_id, collection: Location.active.alphabetical, prompt: "Select location.." %>
-        <%= f.input :max_students %>
-        <%= f.input :start_date, label: "Start Date", as: :string, :input_html => {:class => "avg datepicker"} %> 
-        <%= f.input :end_date, label: "End Date", as: :string, :input_html => {:class => "avg datepicker"} %>
-        <%= f.input :time_slot, collection: [['Morning','am'],['Afternoon','pm']], prompt: "Select time..." %>
-        <%= f.input :active %>
+        <%= camp_form.input :curriculum_id, collection: Curriculum.active.alphabetical, prompt: "Select curriculum..." %>
+        <%= camp_form.input :cost %>
+        <%= camp_form.input :location_id, collection: Location.active.alphabetical, prompt: "Select location.." %>
+        <%= camp_form.input :max_students %>
+        <%= camp_form.input :start_date, label: "Start Date", as: :string, :input_html => {:class => "avg datepicker"} %> 
+        <%= camp_form.input :end_date, label: "End Date", as: :string, :input_html => {:class => "avg datepicker"} %>
+        <%= camp_form.input :time_slot, collection: [['Morning','am'],['Afternoon','pm']], prompt: "Select time..." %>
+        <%= camp_form.input :active %>
       </div>
       <div class="small-1 columns">&nbsp;</div>
-      <div class="small-5 columns">
+      <div class="small-3 columns">
         <% if controller.action_name=="edit" && @camp.active %>
         <h3>Camp Instructor(s)</h3>
-        <%= f.input :instructor_ids, label: "", collection: Instructor.active.alphabetical, as: :check_boxes %>
+        <%= camp_form.input :instructor_ids, label: "", collection: Instructor.active.alphabetical, as: :check_boxes %>
         <% end %>
       </div>
+    
+      <div class="small-1 columns">&nbsp;</div>
+      <div class="small-3 columns">
+        <h5>Registrations for this camp</h5></br>
+        <div id="camp_registrations">
+          <%= camp_form.simple_fields_for :registrations do |reg_form| %>
+            <%= render :partial => "registration_fields", :locals => { :f => reg_form } %>
+          <% end %> 
+          <p>
+            <br /><%= camp_form.link_to_add("Add Registration", :registrations, :class => 'button tiny') %>
+          </p>
+        </div> 
+      </div>
     </div>
-
     <div class="form-actions">
-      <%= f.submit nil, class: 'button radius' %>
+      <%= camp_form.submit nil, class: 'button radius' %>
       <%= link_to 'Back to list of camps', camps_path, :class => 'button secondary radius' %>
     </div>
 

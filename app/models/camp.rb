@@ -9,6 +9,10 @@ class Camp < ActiveRecord::Base
   has_many :registrations
   has_many :students, through: :registrations
 
+  #nested_attributes
+  accepts_nested_attributes_for :registrations, reject_if: lambda { |reg| reg[:student_id].blank? or reg[:payment_status].blank?}
+
+
   # validations
   validates_presence_of :curriculum_id, :time_slot, :start_date
   validates_numericality_of :cost, only_integer: true, greater_than_or_equal_to: 0

@@ -1,0 +1,31 @@
+<h3>Administrator Dashboard: Upcoming Camps</h3>
+</br></br>
+<table class="table">
+  <tr>
+    <th width="220">Name</th>
+    <th width="120">Start On</th>
+    <th width="120">Location</th>
+    <th width="120">Registered/Max Capacity</th>
+    <th width="220">Assigned Instructors</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @camps.each do |camp| %>
+  <tr>
+    <td><%= link_to camp.name, camp_path(camp) %></td>
+    <td align="center"><%= camp.start_date.strftime('%m/%d/%y') %></td>
+    <td align="center"><%= camp.location.name %></td>
+    <td align="center"><%= "#{camp.registrations.count}/#{camp.location.max_capacity}" %></td>
+    <td align="center"><% camp.instructors.each do |instructor| %>
+        <li><%= link_to instructor.name, instructor_path(instructor) %></li>
+      <% end %></td>
+    <td><%= link_to 'Camp Details', camp_path(camp), class: "button tiny radius" %></td>
+    <td><%= link_to 'Location Details', location_path(camp.location), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
+<%= will_paginate @camps, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>

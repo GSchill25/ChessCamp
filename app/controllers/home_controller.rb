@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @camps = Camp.upcoming.chronological.paginate(:page => params[:page]).per_page(10)
   end
 
   def about
@@ -22,7 +23,7 @@ class HomeController < ApplicationController
 
   def instructor_dash
   	@instructor = current_user.instructor
-  	@camps = @instructor.camps.upcoming.to_a
+  	@camps = @instructor.camps.upcoming.paginate(:page => params[:page]).per_page(10)
   end
   
 end

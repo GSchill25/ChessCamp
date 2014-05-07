@@ -66,13 +66,15 @@
           </li>
         </ul>
 
-        <ul>
-          <% if current_user.role? :admin %>
-            <%= link_to 'Dashboard', admin_path %>
-          <% elsif current_user.role? :instructor %>
-            <%= link_to 'Dashboard', instructor_dash_path %>
-          <% else %>
-            <%= link_to 'Home', home_path %>
+        <ul> 
+          <% if !current_user.nil? %>
+            <% if current_user.role? :admin %>
+              <%= link_to 'Dashboard', admin_path %>
+            <% elsif current_user.role? :instructor %>
+              <%= link_to 'Dashboard', instructor_dash_path %>
+            <% else %>
+              <%= link_to 'Home', home_path %>
+            <% end %>
           <% end %>
         </ul>
 

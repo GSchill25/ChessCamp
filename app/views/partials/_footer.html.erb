@@ -1,11 +1,13 @@
 <div id="footer">
 	<div>
-	  <% if current_user.role? :admin %>
-	  	<%= link_to 'Home', admin_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
-	  <% elsif current_user.role? :instructor %>
-	  	<%= link_to 'Home', instructor_dash_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
-	  <% else %>
-	  	<%= link_to 'Home', home_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
+	  <% if !current_user.nil? %>
+		  <% if current_user.role? :admin %>
+		  	<%= link_to 'Home', admin_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
+		  <% elsif current_user.role? :instructor %>
+		  	<%= link_to 'Home', instructor_dash_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
+		  <% else %>
+		  	<%= link_to 'Home', home_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
+		  <% end %>
 	  <% end %>
   	  <%= link_to 'About Us', about_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
 	  <%= link_to 'Contact Us', contact_path %>&nbsp;&nbsp;::&nbsp;&nbsp;

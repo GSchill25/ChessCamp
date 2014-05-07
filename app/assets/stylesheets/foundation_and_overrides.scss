@@ -36,9 +36,9 @@
 // $total-columns: 12;
 
 // We use these to control various global styles
-// $body-bg: #fff;
+   $body-bg: #FFCC99;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+   $body-font-family: "Arial", Helvetica, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -51,9 +51,9 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
+   $primary-color: #003366;
+   $secondary-color: #3399FF;
+   $alert-color: #E6172C;
 $success-color: #B5EBC9;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
@@ -113,7 +113,7 @@ $success-color: #B5EBC9;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+   $header-font-family: "Georgia", serif;
 // $header-font-weight: 300;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -240,7 +240,7 @@ $success-color: #B5EBC9;
 // We use these to control text style.
 // $alert-font-weight: normal;
 // $alert-font-size: rem-calc(13);
-$alert-font-color: #43AC6A;
+$alert-font-color: #FF1111;
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
 // We use this for close hover effect.
@@ -312,7 +312,7 @@ $alert-font-color: #43AC6A;
 // $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
+   $button-tny: rem-calc(6);
 // $button-sml: rem-calc(14);
 // $button-med: rem-calc(16);
 // $button-lrg: rem-calc(18);
@@ -325,7 +325,7 @@ $button-margin-bottom: rem-calc(0);
 // $button-font-family: $body-font-family;
 // $button-font-color: #fff;
 // $button-font-color-alt: #333;
-// $button-font-tny: rem-calc(11);
+   $button-font-tny: rem-calc(9);
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
@@ -333,7 +333,7 @@ $button-margin-bottom: rem-calc(0);
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: 5%;
+   $button-function-factor: 20%;
 
 // We use these to control button border styles.
 // $button-border-width: 1px;
@@ -409,7 +409,7 @@ $button-margin-bottom: rem-calc(0);
 // We use these to control styles for the list elements.
 // $f-dropdown-list-style: none;
 // $f-dropdown-font-color: #555;
-// $f-dropdown-font-size: rem-calc(14);
+   $f-dropdown-font-size: rem-calc(12);
 // $f-dropdown-list-padding: rem-calc(5, 10);
 // $f-dropdown-line-height: rem-calc(18);
 // $f-dropdown-list-hover-bg: #eeeeee  ;
@@ -595,7 +595,7 @@ $button-margin-bottom: rem-calc(0);
 // $keystroke-font-size: rem-calc(14);
 // $keystroke-font-color: #222;
 // $keystroke-font-color-alt: #fff;
-// $keystroke-function-factor: -7%;
+   $keystroke-function-factor: 27%;
 
 // We use this to control keystroke padding.
 // $keystroke-padding: rem-calc(2 4 0);
@@ -1029,7 +1029,7 @@ $panel-bg: scale-color(#B5E7F5, $lightness: 50%);
 
 // These control the background color for the table and even rows
 // $table-bg: #fff;
-$table-even-row-bg: #FAF2F0;
+$table-even-row-bg: #74C2E1;
 
 // These control the table cell border style
 $table-border-style: none;
@@ -1123,7 +1123,7 @@ $table-margin-bottom: rem-calc(25);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #F7EAE6;
+$topbar-bg-color: #3399FF;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1135,7 +1135,7 @@ $topbar-margin-bottom: 20px;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #F7EAE6;
+$topbar-dropdown-bg: #FF9966;
 $topbar-dropdown-link-color: #000;
 // $topbar-dropdown-link-bg: #F7EAE6;
 // $topbar-dropdown-link-weight: normal;
@@ -1278,6 +1278,11 @@ a img {
       margin-left: 70px;
       width: 240px;
   }
+
+a:hover {
+  color: black ;
+  background-color: #def ;
+}
 
 select.date { width: 95px; }
 #camp_time_slot, #camp_max_students, #camp_cost, #camp_curriculum_id { width: 290px; }

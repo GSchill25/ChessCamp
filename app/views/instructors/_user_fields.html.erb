@@ -4,6 +4,8 @@
       <%= f.input :username %>
       <%= f.input :password %>
       <%= f.input :password_confirmation %>
-      <%= f.select(:role, User::ROLES) %>
+      <% if current_user.role? :admin %>
+      	<%= f.select(:role, User::ROLES) %>
+      <% end %>
     </div>
 </div>

@@ -19,7 +19,9 @@ class Ability
             instructor.id == user.instructor_id
         end
     else
-      can :read, :all
+      can :read, Camp
+      can :read, Location
+      can :read, Instructor
     end
     #
     # The first argument to `can` is the action you are giving the user

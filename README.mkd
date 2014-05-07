@@ -2,7 +2,9 @@
 
 * Added bonus feature: interative, scrollable, zoomable maps on location show pages
 * Registrations added on Camp edit pages
-* Sleep 1 added to geocoder function, otherwise function times out sometimes when running cucumber tests, remove sleep 1 at own discretion
+* Sleep 1 added to geocoder function, otherwise function times out sometimes when running cucumber tests, can remove sleep 1 at own discretion
+* Made slight change to cucumber test to allow datepickers in camp forms 
+* Please make sure autofill does not fill in form fields that are checked for blank 
 
 
 

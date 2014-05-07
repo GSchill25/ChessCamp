@@ -21,7 +21,8 @@ class HomeController < ApplicationController
   end
 
   def instructor_dash
-
+  	@instructor = current_user.instructor
+  	@camps = @instructor.camps.upcoming.to_a
   end
   
 end
